@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body  ng-app="myApp" ng-controller="myCtrl">
+
+
+<div>
+ 
+  <title>New/Edit Product</title>
+    <h1>New Product form </h1>
+     
+    <form action="saveProduct" method="post", modelAttribute="product">
+    <table>
+   
+     <form:hidden path="id"/>
+     
+     <tr>
+     <td>     Vendor Name: <input path="vendor_name" ng-model="vendor_name"/> <tr/> </td>
+ <tr>
+     <td>
+  Select Batch  <select ng-model="Batch">
+ 
+<option value=" ">Select Batch</option>
+  <option value="Morning">Morning</option>
+  <option value="Afternoon">Afternoon</option>
+  <option value="Evening">Evening</option>
+</select> <tr/> </td>
+    
+      <tr>
+     <td>  Milk_quaintly: <input type="text" ng-model="milk_quaintly"  > <tr/> </td>
+        <tr>  <td>   fat: <input type="text" ng-model="fat"> <tr/> </td>
+       <tr>  <td>  rate_of_fat: <input type="text" ng-model="rate_of_fat"> <tr/> </td>
+          <tr>  <td>     per_liter: <input type="text" ng-model="per_liter"> <tr/> </td>
+                
+            <tr>  <td>        total: <input type="text" ng-model="total" > <tr/> </td>
+              <tr>  <td>          advanced: <input type="text" ng-model="advanced"> <tr/> </td>
+              <tr>  <td>             balance: <input type="text" ng-model="balance">  <tr/> </td>
+                 <tr>
+                <td colspan="2" align="center"><input type="submit" value="Save"></td>
+            </tr>
+     </table>                   
+   </form>
+   <button ng-click="cal()">cal</button> 
+</div>
+
+ 
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.cal = function() {
+    $scope.per_liter = $scope.fat * $scope.rate_of_fat;
+    $scope.total =  $scope.per_liter * $scope.milk_quaintly;
+    if ($scope.advanced == null) {
+    	$scope.balance = $scope.total
+	} else {
+    $scope.balance =  $scope.total - $scope.advanced;
+	}
+    }
+    
+    
+});
+</script>
+</body>
+</html>
