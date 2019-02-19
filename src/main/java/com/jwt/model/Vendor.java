@@ -24,6 +24,7 @@ public  class Vendor   {
 	// this commend by pramod fourth
 	//fith comment
 	//fith comment
+	//sixth comment
     @Column
     private String name;
  
