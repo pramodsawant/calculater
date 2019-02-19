@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
- 
+// this is test in vendor for git check 
 @Entity
 @Table(name = "VEN_TBL")
 
@@ -17,7 +17,7 @@ public  class Vendor   {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
- 
+ //second test for git change
     @Column
     private String name;
  
