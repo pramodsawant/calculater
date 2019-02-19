@@ -22,6 +22,7 @@ public  class Vendor   {
 	
 	//third comment for new version
 	// this commend by pramod fourth
+	//fith comment
     @Column
     private String name;
  
