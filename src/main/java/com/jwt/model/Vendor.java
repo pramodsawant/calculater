@@ -18,6 +18,7 @@ public  class Vendor   {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
  //second test for git change
+	//new test pramod
     @Column
     private String name;
  
